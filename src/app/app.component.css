@@ -1,0 +1,14 @@
+.titles-container {
+    text-align: center;
+    margin: 5vh;
+}
+
+.title {
+    font-family: designer;
+    font-size: 6vh;
+}
+
+.subtitle {
+    font-family: alte;
+    font-size: 2vh;
+}

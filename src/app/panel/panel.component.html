@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="title-container">
+        <div class="title">
+            {{ title }}
+        </div>
+        <div class="subtitle">
+            {{ subtitle }}
+        </div>
+    </div>
+    <div class="heatmap-container">
+        
+
+        <div class="heatmap-col" *ngIf="loaded">
+            <div class="heatmap-row" *ngFor="let row of keys">
+                <div class="weekday">
+                    {{ row[0].toUpperCase() }}
+                </div>
+                <div class="square-container" *ngFor="let square of data.weekdays[row]">
+                    <square></square>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
