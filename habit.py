@@ -1,4 +1,4 @@
-import json
+from helper import *
 
 
 class Habit:
@@ -13,9 +13,7 @@ class Habit:
 		pass
 
 	def load(self):
-		with open('data.json', 'r') as file:
-			data = json.load(file)[self.name]
-		return data
+		return get_habits_json()[self.name]
 
 	def log(self, amount):
 		pass

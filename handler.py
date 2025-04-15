@@ -7,6 +7,12 @@ def handle_view(args):
 		log_syntax_error(VIEW_SYNTAX_MSG)
 		return
 
+	habits_list = get_habits_list()
+
+	if habit not in habits_list:
+		log_error(f"No habit with name '{habit}' exists!")
+		return
+
 	# todo print calendar
 	# load in gym object from file
 	# create class object from file
@@ -47,7 +53,19 @@ def handle_create(args):
 		log_error(f"A habit with name '{habit}' already exists!")
 		return
 
+	plurality = query_yn("Should your habit log a range (plurality) of values?", preference="Y")
 
+	habits = get_habits_json()
+	habits[habit] = {
+		"title": args[0],
+		"streak": 0,
+		"average": 0.0,
+		"is_plural": plurality,
+		"logs": {}
+	}
+	save_habits_json(habits)
+
+	print(f"\nSuccessfully created habit '{habit}'")
 
 
 def handle_delete(args):
@@ -62,9 +80,14 @@ def handle_delete(args):
 		log_error(f"No habit with name '{habit}' exists!")
 		return
 
-	query_yn("Are you sure you want to delete this habit?", preference="N")
+	if not query_yn("Are you sure you want to delete this habit?", preference="N"):
+		return
 
+	habits = get_habits_json()
+	del habits[habit]
+	save_habits_json(habits)
 
+	print(f"\nSuccessfully deleted habit '{habit}'")
 
 
 def handle_not_found():
