@@ -1,5 +1,6 @@
 from constants import *
 from helper import *
+from habit import Habit
 
 
 def handle_view(args):
@@ -7,17 +8,17 @@ def handle_view(args):
 		log_syntax_error(VIEW_SYNTAX_MSG)
 		return
 
+	habit = args[0]
 	habits_list = get_habits_list()
 
 	if habit not in habits_list:
 		log_error(f"No habit with name '{habit}' exists!")
 		return
 
-	# todo print calendar
-	# load in gym object from file
-	# create class object from file
-	# print calendar
-	pass
+	habit_object = Habit(habit)
+
+
+	habit_object.view()
 
 
 def handle_list():
@@ -27,12 +28,32 @@ def handle_list():
 
 
 def handle_log(args):
-	if len(args) == 0:
+	if len(args) == 0 or len(args) >= 3:
 		log_syntax_error(LOG_SYNTAX_MSG)
 		return
+	
+	habits_list = get_habits_list()
 
-	# send command to object in argument
-	pass
+	if habit not in habits_list:
+		log_error(f"No habit with name '{habit}' exists!")
+		return
+
+	habit_object = Habit(habit)
+	
+	if len(args) == 1:
+		if habit_object.getPlurality():
+			habit_object.log(float(args[0]))
+		else:
+			habit_object.log(1)
+	if len(args) == 2:
+		if habit_object.getPlurality():
+			habit_object.log_previous(float(args[0]), args[1])
+		else:
+			habit_object.log_previous(1, args[1])
+
+	# continue here
+
+	
 
 
 def handle_help():

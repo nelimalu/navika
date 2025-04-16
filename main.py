@@ -6,6 +6,9 @@ import json
 '''
 squares:
 □▤▦▩■
+
+make info command, with date param
+prints all logs on that day with values
 '''
 
 
