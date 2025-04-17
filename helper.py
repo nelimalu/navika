@@ -1,6 +1,7 @@
 import json
 from readchar import readchar
 import time
+from constants import *
 
 
 def get_habits_list():
@@ -44,6 +45,26 @@ def query_yn(message, preference="Y"):
 			return False
 
 		print("\n", flush=True)
+
+
+def get_square(maxima, value):
+	maximum = maxima['maximum']
+	minimum = maxima['minimum']
+
+	if maximum - minimum == 0:
+		return '■'
+
+	percentage = (value - minimum) / (maximum - minimum)
+	# ▤▦▩■
+
+	if percentage < 0.25:
+		return '▤'
+	elif percentage < 0.5:
+		return '▦'
+	elif percentage < 0.75:
+		return '▩'
+	return '■'
+
 
 
 if __name__ == "__main__":

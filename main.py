@@ -16,7 +16,7 @@ def startup():
 	# loop all data and update
 
 	print(STARTUP_MSG)
-	list()
+	handle_help()
 
 
 def query():
@@ -36,6 +36,8 @@ def query():
 		handle_create(args)
 	elif command == "delete":
 		handle_delete(args)
+	elif command == "info":
+		handle_info(args)
 	elif command == "quit":
 		return False
 	else:

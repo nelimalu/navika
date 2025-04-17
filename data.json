@@ -1,11 +1,27 @@
 {
     "gym": {
         "title": "gym",
-        "streak": 0,
-        "average": 0.0,
+        "streak": 1,
+        "average": 0.7777777777777777,
         "is_plural": false,
         "logs": {
-            "2025-04-14": 1
+            "2025-04-14": 1,
+            "2025-04-16": 1,
+            "2025-04-15": 1
         }
+    },
+    "meditate": {
+        "title": "meditate",
+        "streak": 0,
+        "average": 0.0,
+        "is_plural": true,
+        "logs": {}
+    },
+    "read": {
+        "title": "read",
+        "streak": 0,
+        "average": 0.0,
+        "is_plural": true,
+        "logs": {}
     }
 }
