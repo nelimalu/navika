@@ -5,7 +5,7 @@ from constants import *
 
 
 def get_habits_list():
-	with open('data.json', 'r') as file:
+	with open(FILEPATH, 'r') as file:
 		data = json.load(file).keys()
 	return data
 
@@ -19,12 +19,12 @@ def log_error(error):
 
 
 def get_habits_json():
-	with open('data.json', 'r') as file:
+	with open(FILEPATH, 'r') as file:
 		return json.load(file)
 
 
 def save_habits_json(data):
-	with open('data.json', 'w') as file:
+	with open(FILEPATH, 'w') as file:
 		json.dump(data, file, indent=4)
 
 

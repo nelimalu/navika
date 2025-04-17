@@ -1,3 +1,4 @@
+FILEPATH = "c:\\dev\\python\\navika\\data.json"
 
 # command response messages
 STARTUP_MSG = "\n -- NAVIKA -- v1.0 -- LUKA JOVANOVIC -- "
