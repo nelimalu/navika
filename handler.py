@@ -27,7 +27,7 @@ def handle_list():
 
 
 def handle_log(args):
-	if len(args) <= 1 or len(args) > 3:
+	if len(args) < 1 or len(args) > 3:
 		log_syntax_error(LOG_SYNTAX_MSG)
 		return
 	
@@ -39,16 +39,16 @@ def handle_log(args):
 		return
 
 	habit_object = Habit(habit)
-	
-	if len(args) == 2:
-		if habit_object.get_plurality():
+
+	if habit_object.get_plurality():
+		if len(args) == 2:
 			habit_object.log(float(args[1]))
-		else:
-			habit_object.log(1)
-	if len(args) == 3:
-		if habit_object.get_plurality():
+		if len(args) == 3:
 			habit_object.log_previous(float(args[1]), args[2])
-		else:
+	else:
+		if len(args) == 1:
+			habit_object.log(1)
+		if len(args) == 2:
 			habit_object.log_previous(1, args[1])
 
 	print(f"\n Successfully logged your habit.")
@@ -126,4 +126,12 @@ def handle_info(args):
 	for habit, info in data.items():
 		if date in info['logs'].keys():
 			print(f"  {habit}: {info['logs'][date]}")
+
+
+def handle_viewall():
+	habits_json = get_habits_json()
+
+	for habit, data in habits_json.items():
+		habit_object = Habit(habit)
+		habit_object.view()
 	

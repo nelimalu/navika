@@ -6,7 +6,6 @@ import json
 '''
 squares:
 □▤▦▩■
-
 make info command, with date param
 prints all logs on that day with values
 '''
@@ -16,7 +15,8 @@ def startup():
 	# loop all data and update
 
 	print(STARTUP_MSG)
-	handle_help()
+	print('\n Type "help" for a list of commands.')
+	#handle_help()
 
 
 def query():
@@ -38,6 +38,8 @@ def query():
 		handle_delete(args)
 	elif command == "info":
 		handle_info(args)
+	elif command == "viewall":
+		handle_viewall()
 	elif command == "quit":
 		return False
 	else:

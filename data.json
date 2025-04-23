@@ -2,26 +2,43 @@
     "gym": {
         "title": "gym",
         "streak": 1,
-        "average": 0.7777777777777777,
+        "average": 0.8888888888888888,
         "is_plural": false,
         "logs": {
             "2025-04-14": 1,
             "2025-04-16": 1,
-            "2025-04-15": 1
+            "2025-04-15": 1,
+            "2025-04-17": 1,
+            "2025-04-22": 1
         }
     },
     "meditate": {
         "title": "meditate",
         "streak": 0,
-        "average": 0.0,
+        "average": 7.0,
         "is_plural": true,
-        "logs": {}
+        "logs": {
+            "2025-04-22": 7.0
+        }
     },
     "read": {
         "title": "read",
         "streak": 0,
-        "average": 0.0,
+        "average": 13.333333333333334,
         "is_plural": true,
-        "logs": {}
+        "logs": {
+            "2025-04-16": 5.0,
+            "2025-04-17": 20.0,
+            "2025-04-22": 15.0
+        }
+    },
+    "nvc": {
+        "title": "nvc",
+        "streak": 0,
+        "average": 1.0,
+        "is_plural": false,
+        "logs": {
+            "2025-04-22": 1
+        }
     }
 }

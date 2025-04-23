@@ -29,7 +29,7 @@ class Habit:
 		for key, value in self.data['logs'].items():
 			if value > maximum:
 				maximum = value
-			elif value < minimum:
+			if value < minimum:
 				minimum = value
 
 		return {
