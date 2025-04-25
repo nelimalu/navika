@@ -111,11 +111,11 @@ class Habit:
 					if self.get_plurality():
 						print(get_square(self.get_maxima(), self.data['logs'][string_date]), end="")
 					else:
-						print("■", end="")
+						print(colour('■'), end="")
 					# pick gradient here ▤▦▩■
 
 				else:
-					print("□", end="")
+					print(colour("□", c="\033[37m"), end="")
 
 				current_date = current_date + timedelta(weeks=1)
 

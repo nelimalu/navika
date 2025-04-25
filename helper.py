@@ -47,23 +47,27 @@ def query_yn(message, preference="Y"):
 		print("\n", flush=True)
 
 
+def colour(text, c=COLOUR):
+	return f"{c}{text}\033[00m"
+
+
 def get_square(maxima, value):
 	maximum = maxima['maximum']
 	minimum = maxima['minimum']
 
 	if maximum - minimum == 0:
-		return '■'
+		return colour('■')
 
 	percentage = (value - minimum) / (maximum - minimum)
 	# ▤▦▩■
 
 	if percentage < 0.25:
-		return '▤'
+		return colour('▤')
 	elif percentage < 0.5:
-		return '▦'
+		return colour('▦')
 	elif percentage < 0.75:
-		return '▩'
-	return '■'
+		return colour('▩')
+	return colour('■')
 
 
 

@@ -1,5 +1,7 @@
 FILEPATH = "c:\\dev\\python\\navika\\data.json"
 
+COLOUR = "\033[93m"
+
 # command response messages
 STARTUP_MSG = "\n -- NAVIKA -- v1.0 -- LUKA JOVANOVIC -- "
 LIST_MSG = "\n These are your current active habits:"
