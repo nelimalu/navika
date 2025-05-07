@@ -3,7 +3,7 @@ FILEPATH = "c:\\dev\\python\\navika\\data.json"
 COLOUR = "\033[93m"
 
 # command response messages
-STARTUP_MSG = "\n -- NAVIKA -- v1.0 -- LUKA JOVANOVIC -- "
+STARTUP_MSG = "\n -- NAVIKA -- v1.1 -- LUKA JOVANOVIC -- "
 LIST_MSG = "\n These are your current active habits:"
 HELP_MSG = "\n Here is a list of all commands:"
 NOT_FOUND_MSG = "That command doesn't exist. Try 'help'"
@@ -19,6 +19,7 @@ HELP_SYNTAX_MSG = "help"
 LIST_SYNTAX_MSG = "list"
 INFO_SYNTAX_MSG = "info <date>"
 VIEWALL_SYNTAX_MSG = "viewall"
+WEEK_SYNTAX_MSG = "week"
 QUIT_SYNTAX_MSG = "quit"
 
 SYNTAX_LIST = [
@@ -30,5 +31,6 @@ SYNTAX_LIST = [
 	LIST_SYNTAX_MSG,
 	INFO_SYNTAX_MSG,
 	VIEWALL_SYNTAX_MSG,
+	WEEK_SYNTAX_MSG,
 	QUIT_SYNTAX_MSG
 ]

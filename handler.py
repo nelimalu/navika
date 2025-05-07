@@ -20,6 +20,21 @@ def handle_view(args):
 	habit_object.view()
 
 
+def handle_week():
+	habits_json = get_habits_json()
+	habits_list = get_habits_list()
+	longest_habit = max([len(x) for x in habits_list])
+
+	print("")
+	print(" " * longest_habit, "MTWTFSS")
+
+	for habit, data in habits_json.items():
+		print((" " * (longest_habit - len(habit))) + habit, end=" ")
+
+		habit_object = Habit(habit)
+		habit_object.view_week()
+
+
 def handle_list():
 	print(LIST_MSG)
 	for i, title in enumerate(get_habits_list()):

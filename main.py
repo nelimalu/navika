@@ -40,6 +40,8 @@ def query():
 		handle_info(args)
 	elif command == "viewall":
 		handle_viewall()
+	elif command == "week":
+		handle_week()
 	elif command == "quit":
 		return False
 	else:

@@ -37,6 +37,24 @@ class Habit:
 			"minimum": minimum
 		}
 
+	def view_week(self):
+		today = datetime.today()
+
+		for i in range(7):
+			delta = timedelta(days=(today.weekday() - i))
+			current_date = today - delta
+			string_date = current_date.strftime('%Y-%m-%d')
+
+			if string_date in self.data['logs']:
+				if self.get_plurality():
+					print(get_square(self.get_maxima(), self.data['logs'][string_date]), end="")
+				else:
+					print(colour('■'), end="")
+			else:
+				print(colour("□", c="\033[37m"), end="")
+
+		print("")
+
 
 	def view(self):
 		logs = [[] for _ in range(7)]
